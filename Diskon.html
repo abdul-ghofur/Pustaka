@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Diskon</title>
+    <!-- JUDUL -->
+    <style type="text/css">
+        /* Membuat border / box */
+        main{
+            max-width: 100%;
+            /* Mengatur Maxsimal Ukuran*/
+            margin-left: 25%;
+            /* Mengatur margin kiri*/
+            border: 4px solid gray;
+            /* Ukuran border 4px solid warna abu"*/
+            border-radius: 10px 10px;
+            /* Ukuran border 4px solid warna abu"*/
+            width: 50%;
+            height: 50%;
+            /* Mengatur Ukuran */
+            text-align: center;
+            /* text di pindahkan ke tengah */
+            background-color: lightblue;
+            /* background warna biru cerah */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1> PENGHITUNGAN DISKON </h1>
+        <!-- Nama Judul -->
+        <form name="Diskon">
+        <!-- Membuat form yang bernama Diskon -->
+            <p></p>
+            Harga<br>
+            <input type="text" name="harga">
+            <!-- Membuat input yang bernama harga -->
+            <p></p>
+            Persen<br>
+            <input type="text" name="persen">
+            <!-- Membuat input yang bernama persen -->
+            <br>
+            <input type="button" name="cek" value="CEK" onclick="Cek_Diskon();">
+            <!-- Membuat input tombol -->
+            <div>
+            Hasil Diskon
+            <br>
+            <input type="text" name="hasil">
+            <!-- Membuat colom text bernama hasil -->
+            <p></p>
+            </div>
+        </form>
+        <!-- Setelah Membuat tampilannya maka lanjut ke java script -->
+ 
+        <script type="text/javascript">
+            function Cek_Diskon() { 
+            // Membuat function bernama Cek_Diskon
+                var harga = document.Diskon.harga.value; 
+                // Mengambil nilai input bernama harga yang berada pada form bernama Diskon
+                var persen = document.Diskon.persen.value; 
+                // Mengambil nilai input bernama persen yang berada pada form bernama Diskon
+                harga = parseInt(harga); 
+                // Merubah data string menjadi integer
+                persen = parseInt(persen); 
+                // Merubah data string menjadi integer
+                var hasil = harga * (persen/100); 
+                // Penghitungan nya (Persen/100) lalu kali harga
+                hasil = harga - parseInt(hasil); 
+                // lalu hasil di kurangan harga
+                document.Diskon.hasil.value = hasil; 
+                // pindahkan nilai hasil ke input bernama hasil yang berada pada form Diskon
+            }
+        </script>
+    </main>
+</body>
+</html>
